@@ -1,0 +1,147 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    background-color: #c3ccd8;
+}
+
+.calculator{
+    background: #d4d8de;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 9px 9px 16px #a3b1c6,
+    -6px -6px 16px #ffffff;
+}
+input{
+    width: 320px;
+    padding: 15px;
+    margin: 30px 10px;
+    font-size: 35px;
+    text-align: right;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    box-shadow: inset 6px 6px 12px #a3b1c6,
+    inset -6px -6px 12px #ffffff;
+    color: black;
+    border-radius: 15px;
+}
+input::placeholder{
+    color: black;
+}
+.btn button{
+    width: 60px;
+    height: 60px;
+    margin: 10px;
+    border: none;
+    border-radius: 15px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+.reset_del {
+    background-color: rgb(78, 78, 208);
+    color: white;
+    box-shadow: 5px 6px 12px #a3b1c6,
+    -9px -6px 12px #ffffff;
+}
+.reset_del:hover{
+    background-color: rgb(65, 65, 190);
+}
+.operator{
+    background-color: orange;
+    box-shadow: 5px 6px 12px #a3b1c6,
+    -9px -6px 12px #ffffff;
+    transition: 0.3s ease;
+}
+.operator:hover{
+    background-color: rgb(218, 146, 2);
+}
+.number{
+    background-color: #e0e5ec;
+    box-shadow: 5px 6px 12px #a3b1c6,
+    -6px -6px 12px #ffffff;
+    color: black;
+    transition: 0.3s ease;
+}
+.number:hover{
+    background-color: #c1c4c8;
+
+}
+.history {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    max-height: 400px;
+    color: black;
+    padding-top: 0;
+    text-align: center;
+    scrollbar-width: none;
+}
+
+.history::-webkit-scrollbar {
+    display: none;
+}
+
+.forHistory{
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    background: #c3ccd8;
+    gap: 40px;
+    align-items: center;
+    padding-bottom: 20px;
+    z-index: 10;
+}
+.forHistory button{
+    font-size: 14px;
+    font-style: italic;
+    padding: 5px;
+    background-color: transparent;
+    color: black;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.forHistory button:hover{
+    color: orange;
+}
+.listh{
+    padding-top: 20px;
+}
+.history li {
+    list-style: none;
+    padding: 8px;
+    border-bottom: 1px solid #444;
+    font-size: 20px;
+}
+.history li:hover{
+    background-color: rgb(205, 212, 222);
+}
+
+@media (max-width: 580px) {
+    body{
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        height: auto;
+    }
+    .calculator {
+        margin-top: 30px;
+    }
+    .forHistory{
+        top: 0;
+    }
+}
