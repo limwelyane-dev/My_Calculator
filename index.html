@@ -6,8 +6,10 @@
     <title>My_calculator</title>
     <link rel="stylesheet" href="calcu.css">
 </head>
+
 <body>
     <div class="calculator">
+        <p>Calculator <span>2027</span></p>
         <input type="text" placeholder="0" readonly id="inputBox">
 
         <div class="btn">
@@ -41,13 +43,26 @@
             <button class="operator">=</button>
         </div>
     </div>
-    <div class="history" style="display: none;">
-        <div class="forHistory">
-            <h2>History</h2>
-            <button id="clearHistory">Clear History</button>
+    <div class="sideContent">
+        <div class="darkToggle" id="darkToggle">
+            <div class="icons">
+                <div class="bulb" >
+                    <img src="dark.png" alt="">
+                </div>
+                <div id="light" class="bulb" style="display: none;">
+                    <img src="light.png" alt="">
+                </div>
+            </div>
+            <button id="switch">Dark mode</button>
         </div>
+        <div class="history" style="display: none;">
+            <div class="forHistory">
+                <h2>History</h2>
+                <button id="clearHistory">Clear History</button>
+            </div>
         
-        <ul id="historyList"></ul>
+            <ul id="historyList"></ul>
+        </div>
 
     </div>
     <script src="calcu.js"></script>
