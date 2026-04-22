@@ -62,3 +62,29 @@ clearbtn.addEventListener("click", () => {
     historyList.parentElement.style.display = "none";
     
 });
+
+const toggle = document.getElementById("darkToggle");
+const bulbs = document.querySelectorAll(".bulb");
+const text = document.getElementById("switch");
+
+
+if (localStorage.getItem("darkMode") === "enabled") {
+    document.body.classList.add("dark");
+    bulbs[0].style.display = "none";
+    bulbs[1].style.display = "block";
+    text.textContent = "Light mode";
+}
+
+toggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+
+    const isDark = document.body.classList.contains("dark");
+
+
+    bulbs[0].style.display = isDark ? "none" : "block";
+    bulbs[1].style.display = isDark ? "block" : "none";
+
+
+    text.textContent = isDark ? "Light mode" : "Dark mode";
+    localStorage.setItem("darkMode", isDark ? "enabled" : "disabled");
+});
